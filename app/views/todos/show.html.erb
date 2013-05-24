@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @todo.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @todo.content %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @todo.status %>
+</p>
+
+<p>
+  <b>Deadline:</b>
+  <%= @todo.deadline %>
+</p>
+
+
+<%= link_to 'Edit', edit_todo_path(@todo) %> |
+<%= link_to 'Back', todos_path %>
+
+<h3>Category</h3>
+
+<p><%= @todo.category.name %>(<%= @todo.category.priority %>)</p>

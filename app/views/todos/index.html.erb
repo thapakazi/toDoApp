@@ -1,0 +1,37 @@
+
+<h1>My ToDos</h1>
+
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Status</th>
+    <th>Deadline</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @todos.each do |todo| %>
+  <tr>
+    <td><%= link_to todo.title, todo %>
+    <td><%= todo.content %></td>
+    <td><%= todo.status %></td>
+    <td><%= todo.deadline.to_formatted_s(:short) %></td>
+    <td>
+      <%= link_to(edit_todo_path(todo)) do %>
+        <i class="icon-edit"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= link_to todo, :method => :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="icon-trash"></i>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
+</table>
+  <%= will_paginate @posts %>
+<br />
+
+<%= link_to 'New Todo', new_todo_path %>

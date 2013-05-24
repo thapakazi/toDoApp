@@ -1,0 +1,11 @@
+<%= form.fields_for :category do |c| %>
+  <div class="field">
+      <%= c.label :name %><br />
+      <%= c.text_field :name %>
+  </div>
+  <div class="field">
+      <%= c.label :priority %><br />
+      <%= c.number_field :priority %>
+  </div>
+<% end %>
+
